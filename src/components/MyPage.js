@@ -6,6 +6,7 @@ import { Footer } from "./Footer";
 
 const initialTheme = "light";
 const initialLanguage = "es";
+const initialAuth = null;
 
 const translations = {
   en: {
@@ -38,6 +39,7 @@ function MyPage() {
   const [theme, setTheme] = useState(initialTheme);
   const [language, setLanguage] = useState(initialLanguage);
   const [texts, setTexts] = useState(translations[language]);
+  const [auth, setAuth] = useState(initialAuth);
 
   const handleTheme = (e) => {
     //console.log(e.target.value);
@@ -59,6 +61,14 @@ function MyPage() {
     }
   };
 
+  const handleAuth = (e) => {
+    if (auth === true) {
+      setAuth(null);
+    } else {
+      setAuth(true);
+    }
+  };
+
   return (
     <div className="my-page">
       <Header
@@ -66,8 +76,10 @@ function MyPage() {
         handleTheme={handleTheme}
         handleLanguage={handleLanguage}
         texts={texts}
+        auth={auth}
+        handleAuth={handleAuth}
       ></Header>
-      <Main theme={theme} texts={texts}></Main>
+      <Main theme={theme} texts={texts} auth={auth}></Main>
       <Footer theme={theme} texts={texts}></Footer>
     </div>
   );

@@ -1,4 +1,12 @@
-function Header({ theme, handleTheme, handleLanguage, texts }) {
+function Header({
+  theme,
+  handleTheme,
+  handleLanguage,
+  texts,
+  auth,
+  handleAuth,
+}) {
+  
   return (
     <header className={theme}>
       <h2>{texts.headerTitle}</h2>
@@ -25,7 +33,9 @@ function Header({ theme, handleTheme, handleLanguage, texts }) {
         onClick={handleTheme}
       />
       <label htmlFor="dark">{texts.headerDark}</label>
-      <button>{texts.buttonLogin}</button>
+      <button onClick={handleAuth}>
+        {auth ? texts.buttonLogout : texts.buttonLogin}
+      </button>
     </header>
   );
 }
