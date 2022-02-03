@@ -1,8 +1,8 @@
-function Main({theme}) {
+function Main({theme, texts}) {
   return (
     <main className={theme}>
-      <p>Bienvenid@ invitad@</p>
-      <p>Hola usuari@</p>
+      <p>{texts.mainWelcome}</p>
+      <p>{texts.mainHello}</p>
     </main>
   );
 }
