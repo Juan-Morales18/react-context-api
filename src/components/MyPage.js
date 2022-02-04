@@ -22,7 +22,7 @@ const translations = {
     footerTitle: "My footer",
   },
   es: {
-    headerTitle: "Mi aplicacion si Context API",
+    headerTitle: "Mi aplicacion sin Context API",
     headerSubtitle: "Mi cabecera",
     headerLight: "Claro",
     headerDark: "Oscuro",
